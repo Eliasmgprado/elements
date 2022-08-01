@@ -121,5 +121,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  }
+  },
+  "version": "7.6.3"
 }
