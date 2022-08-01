@@ -14,7 +14,7 @@ test-results
 
 # production
 build
-dist
+# dist
 docs-auto
 dist-storybook
 
