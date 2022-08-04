@@ -1,10 +1,11 @@
 import { Dictionary } from '@stoplight/types';
 import * as React from 'react';
-import { BrowserRouter, HashRouter, MemoryRouter, StaticRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter, MemoryRouter } from 'react-router-dom';
+import { StaticRouter } from 'react-router-dom/server';
 
 import { RouterType } from '../types';
 
-const RouterComponent: Dictionary<React.ComponentType, RouterType> = {
+const RouterComponent: Dictionary<React.ComponentType<any>, RouterType> = {
   history: BrowserRouter,
   memory: MemoryRouter,
   hash: HashRouter,

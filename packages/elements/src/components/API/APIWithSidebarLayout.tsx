@@ -10,7 +10,7 @@ import {
 import { Flex, Heading } from '@stoplight/mosaic';
 import { NodeType } from '@stoplight/types';
 import * as React from 'react';
-import { Link, Redirect, useLocation } from 'react-router-dom';
+import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import { ServiceNode } from '../../utils/oas/types';
 import { computeAPITree, findFirstNodeSlug, isInternal } from './utils';
@@ -54,17 +54,37 @@ export const APIWithSidebarLayout: React.FC<SidebarLayoutProps> = ({
     [hideTryIt, hideExport, node],
   );
 
+  const childrenComponent = React.useCallback(
+    node => {
+      return (
+        <ParsedDocs
+          key={pathname}
+          uri={pathname}
+          node={node}
+          nodeTitle={node.name}
+          layoutOptions={layoutOptions}
+          location={location}
+          exportProps={exportProps}
+          tryItCredentialsPolicy={tryItCredentialsPolicy}
+          tryItCorsProxy={tryItCorsProxy}
+        />
+      );
+    },
+    [pathname, layoutOptions, location, exportProps, tryItCredentialsPolicy, tryItCorsProxy],
+  );
+
   if (!node) {
     // Redirect to the first child if node doesn't exist
     const firstSlug = findFirstNodeSlug(tree);
+    console.log(firstSlug);
 
     if (firstSlug) {
-      return <Redirect to={firstSlug} />;
+      return <Navigate to={firstSlug} />;
     }
   }
 
   if (hideInternal && node && isInternal(node)) {
-    return <Redirect to="/" />;
+    return <Navigate to="/" />;
   }
 
   const handleTocClick = () => {
@@ -91,20 +111,13 @@ export const APIWithSidebarLayout: React.FC<SidebarLayoutProps> = ({
   );
 
   return (
-    <SidebarLayout ref={container} sidebar={sidebar}>
-      {node && (
-        <ParsedDocs
-          key={pathname}
-          uri={pathname}
-          node={node}
-          nodeTitle={node.name}
-          layoutOptions={layoutOptions}
-          location={location}
-          exportProps={exportProps}
-          tryItCredentialsPolicy={tryItCredentialsPolicy}
-          tryItCorsProxy={tryItCorsProxy}
-        />
-      )}
-    </SidebarLayout>
+    <Routes>
+      <Route path="/" element={<SidebarLayout ref={container} sidebar={sidebar} />}>
+        <Route index element={childrenComponent(serviceNode)} />
+        {serviceNode.children.map(child => (
+          <Route key={child.uri} path={child.uri.substring(1)} element={childrenComponent(child)} />
+        ))}
+      </Route>
+    </Routes>
   );
 };

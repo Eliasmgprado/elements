@@ -1,6 +1,6 @@
 import { Box, Flex } from '@stoplight/mosaic';
 import * as React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 type SidebarLayoutProps = {
   sidebar: React.ReactNode;
@@ -42,7 +42,8 @@ export const SidebarLayout = React.forwardRef<HTMLDivElement, SidebarLayoutProps
         </Flex>
         <Box ref={scrollRef} bg="canvas" px={24} flex={1} w="full" overflowY="auto">
           <Box style={{ maxWidth: `${maxContentWidth - sidebarWidth}px` }} py={16}>
-            {children}
+            {/* {children} */}
+            <Outlet />
           </Box>
         </Box>
       </Flex>

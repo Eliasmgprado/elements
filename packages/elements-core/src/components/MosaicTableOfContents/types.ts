@@ -8,7 +8,7 @@ export type TableOfContentsProps = {
 };
 
 export type CustomLinkComponent = React.ComponentType<{
-  to: string;
+  to: string | any;
   className?: string;
   children: React.ReactNode;
 }>;
