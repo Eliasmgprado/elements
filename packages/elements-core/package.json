@@ -1,17 +1,17 @@
 {
-  "name": "@stoplight/elements-core",
+  "name": "@Eliasmgprado/elements-core",
   "version": "7.6.3",
   "sideEffects": [
     "web-components.min.js",
     "src/web-components/**",
     "**/*.css"
   ],
-  "homepage": "https://github.com/stoplightio/elements",
-  "bugs": "https://github.com/stoplightio/elements/issues",
+  "homepage": "https://github.com/Eliasmgprado/elements",
+  "bugs": "https://github.com/Eliasmgprado/elements/issues",
   "author": "Stoplight <support@stoplight.io>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/stoplightio/elements"
+    "url": "https://github.com/Eliasmgprado/elements"
   },
   "license": "Apache-2.0",
   "type": "commonjs",
