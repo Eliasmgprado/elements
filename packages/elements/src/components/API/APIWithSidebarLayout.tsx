@@ -6,7 +6,7 @@ import {
   SidebarLayout,
   TableOfContents,
   useLayoutConfig,
-} from '@stoplight/elements-core';
+} from '@eliasmgprado/elements-core';
 import { Flex, Heading } from '@stoplight/mosaic';
 import { NodeType } from '@stoplight/types';
 import * as React from 'react';

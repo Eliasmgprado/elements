@@ -2,7 +2,7 @@ import {
   CustomLinkComponent,
   PoweredByLink,
   TableOfContents as ElementsTableOfContents,
-} from '@stoplight/elements-core';
+} from '@eliasmgprado/elements-core';
 import { BoxProps, Flex } from '@stoplight/mosaic';
 import * as React from 'react';
 

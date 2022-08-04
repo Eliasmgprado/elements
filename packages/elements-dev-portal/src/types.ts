@@ -1,4 +1,4 @@
-import { TableOfContentsItem } from '@stoplight/elements-core';
+import { TableOfContentsItem } from '@eliasmgprado/elements-core';
 
 export type Branch = {
   id: number;

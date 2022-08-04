@@ -1,6 +1,6 @@
 {
-  "name": "@Eliasmgprado/elements-dev-portal",
-  "version": "1.8.3",
+  "name": "@eliasmgprado/elements-dev-portal",
+  "version": "1.8.5",
   "description": "UI components for composing beautiful developer documentation.",
   "keywords": [],
   "sideEffects": [
@@ -50,7 +50,7 @@
     "test.prod": "yarn test --coverage --maxWorkers=2",
     "test.update": "yarn test --updateSnapshot",
     "test.watch": "yarn test --watch",
-    "test.packaging": "node --input-type=commonjs -e \"require('./dist/index.js')\" && node --input-type=module -e \"import './dist/index.mjs'\"",
+    "// test.packaging": "node --input-type=commonjs -e \"require('./dist/index.js')\" && node --input-type=module -e \"import './dist/index.mjs'\"",
     "type-check": "tsc --noEmit"
   },
   "peerDependencies": {
@@ -64,7 +64,7 @@
     ]
   },
   "dependencies": {
-    "@stoplight/elements-core": "~7.6.3",
+    "@eliasmgprado/elements-core": "~7.6.6",
     "@stoplight/markdown-viewer": "^5.5.0",
     "@stoplight/mosaic": "^1.24.2",
     "@stoplight/path": "^1.3.2",

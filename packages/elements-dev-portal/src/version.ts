@@ -1,2 +1,2 @@
 // auto-updated during build
-export const appVersion = '1.8.3';
+export const appVersion = '$npm_package_version';

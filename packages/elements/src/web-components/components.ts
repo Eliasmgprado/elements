@@ -1,4 +1,4 @@
-import { createElementClass } from '@stoplight/elements-core';
+import { createElementClass } from '@eliasmgprado/elements-core';
 
 import { API } from '../index';
 

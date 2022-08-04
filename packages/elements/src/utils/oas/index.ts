@@ -1,4 +1,4 @@
-import { slugify } from '@stoplight/elements-core';
+import { slugify } from '@eliasmgprado/elements-core';
 import type {
   Oas2HttpOperationTransformer,
   Oas2HttpServiceTransformer,

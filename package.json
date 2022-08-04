@@ -1,12 +1,12 @@
 {
   "name": "root",
   "private": true,
-  "homepage": "https://github.com/Eliasmgprado/elements",
-  "bugs": "https://github.com/Eliasmgprado/elements/issues",
+  "homepage": "https://github.com/eliasmgprado/elements",
+  "bugs": "https://github.com/eliasmgprado/elements/issues",
   "author": "Elias M G Prado | Stoplight <support@stoplight.io>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Eliasmgprado/elements"
+    "url": "https://github.com/eliasmgprado/elements"
   },
   "license": "Apache-2.0",
   "workspaces": [
@@ -64,20 +64,20 @@
     "webpack-dev-server": "3.11.2"
   },
   "scripts": {
-    "demo": "yarn workspace @Eliasmgprado/elements-demo",
-    "elements": "yarn workspace @Eliasmgprado/elements",
-    "elements-core": "yarn workspace @Eliasmgprado/elements-core",
-    "elements-dev-portal": "yarn workspace @Eliasmgprado/elements-dev-portal",
-    "build": "yarn workspace @Eliasmgprado/elements-core build && concurrently -n elements,dev-portal \"yarn workspace @Eliasmgprado/elements build\" \"yarn workspace @Eliasmgprado/elements-dev-portal build\"",
-    "build.docs": "yarn workspace @Eliasmgprado/elements build.docs",
-    "postbuild": "yarn workspace @Eliasmgprado/elements test.packaging && yarn workspace @Eliasmgprado/elements-core test.packaging && yarn workspace @Eliasmgprado/elements-dev-portal test.packaging",
+    "demo": "yarn workspace @eliasmgprado/elements-demo",
+    "elements": "yarn workspace @eliasmgprado/elements",
+    "elements-core": "yarn workspace @eliasmgprado/elements-core",
+    "elements-dev-portal": "yarn workspace @eliasmgprado/elements-dev-portal",
+    "build": "yarn workspace @eliasmgprado/elements-core build && concurrently -n elements,dev-portal \"yarn workspace @eliasmgprado/elements build\" \"yarn workspace @eliasmgprado/elements-dev-portal build\"",
+    "build.docs": "yarn workspace @eliasmgprado/elements build.docs",
+    "// postbuild": "yarn workspace @eliasmgprado/elements test.packaging && yarn workspace @eliasmgprado/elements-core test.packaging && yarn workspace @eliasmgprado/elements-dev-portal test.packaging",
     "lint": "eslint '{packages,examples}/*/src/**/*.{ts,tsx}'",
     "version": "lerna version --no-push",
     "release": "lerna publish from-package --yes --registry https://registry.npmjs.org",
-    "release.docs": "yarn workspace @Eliasmgprado/elements release.docs",
+    "release.docs": "yarn workspace @eliasmgprado/elements release.docs",
     "type-check": "yarn workspaces run type-check",
-    "test": "yarn workspace @Eliasmgprado/elements test && yarn workspace @Eliasmgprado/elements-core test && yarn workspace @Eliasmgprado/elements-dev-portal test --passWithNoTests",
-    "test.prod": "yarn workspace @Eliasmgprado/elements test.prod && yarn workspace @Eliasmgprado/elements-core test.prod && yarn workspace @Eliasmgprado/elements-dev-portal test.prod --passWithNoTests",
+    "test": "yarn workspace @eliasmgprado/elements test && yarn workspace @eliasmgprado/elements-core test && yarn workspace @eliasmgprado/elements-dev-portal test --passWithNoTests",
+    "test.prod": "yarn workspace @eliasmgprado/elements test.prod && yarn workspace @eliasmgprado/elements-core test.prod && yarn workspace @eliasmgprado/elements-dev-portal test.prod --passWithNoTests",
     "prepublishOnly": "yarn build",
     "/// examples ///": "",
     "copy:angular": "mkdir examples-dev ; cp -a -v ./examples/angular ./examples-dev ; sh ./use-local-elements.sh angular",
@@ -120,5 +120,6 @@
     "extends": [
       "@commitlint/config-conventional"
     ]
-  }
+  },
+  "version": "7.6.6"
 }

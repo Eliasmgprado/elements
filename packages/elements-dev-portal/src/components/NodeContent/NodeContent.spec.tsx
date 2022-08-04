@@ -1,4 +1,4 @@
-import { CustomLinkComponent } from '@stoplight/elements-core';
+import { CustomLinkComponent } from '@eliasmgprado/elements-core';
 import { render, screen } from '@testing-library/react';
 import * as React from 'react';
 

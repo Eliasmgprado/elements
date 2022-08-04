@@ -1,4 +1,4 @@
-import { withMosaicProvider, withPersistenceBoundary, withQueryClientProvider } from '@stoplight/elements-core';
+import { withMosaicProvider, withPersistenceBoundary, withQueryClientProvider } from '@eliasmgprado/elements-core';
 import * as React from 'react';
 
 export type DevPortalProviderProps = {
