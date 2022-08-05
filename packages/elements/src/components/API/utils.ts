@@ -1,5 +1,5 @@
-import { isHttpOperation, isHttpService, TableOfContentsItem } from '@stoplight/elements-core';
-import { LayoutConfig } from '@stoplight/elements-core/types';
+import { isHttpOperation, isHttpService, TableOfContentsItem } from '@eliasmgprado/elements-core';
+import { LayoutConfig } from '@eliasmgprado/elements-core/types';
 import { NodeType } from '@stoplight/types';
 import { defaults } from 'lodash';
 

@@ -22,7 +22,7 @@ export const ReactRouterMarkdownLink = ({
     );
   }
   return (
-    <Link to={href!} title={title}>
+    <Link to={href!.substring(1)} title={title}>
       {children}
     </Link>
   );

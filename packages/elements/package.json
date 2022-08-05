@@ -1,6 +1,6 @@
 {
   "name": "@eliasmgprado/elements",
-  "version": "7.6.6",
+  "version": "7.6.9",
   "description": "UI components for composing beautiful developer documentation.",
   "keywords": [],
   "sideEffects": [
@@ -20,8 +20,8 @@
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
   "exports": {
-    "./styles.min.css": "./styles.min.css",
-    "./web-components.min.js": "./web-components.min.js",
+    "./styles.min.css": "./dist/styles.min.css",
+    "./web-components.min.js": "./dist/web-components.min.js",
     ".": {
       "require": "./dist/index.js",
       "import": "./dist/index.mjs"

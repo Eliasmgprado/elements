@@ -10,10 +10,10 @@ import {
 import { Flex, Heading } from '@stoplight/mosaic';
 import { NodeType } from '@stoplight/types';
 import * as React from 'react';
-import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Link, Route, Routes, useLocation } from 'react-router-dom';
 
 import { ServiceNode } from '../../utils/oas/types';
-import { computeAPITree, findFirstNodeSlug, isInternal } from './utils';
+import { computeAPITree } from './utils';
 
 type SidebarLayoutProps = {
   serviceNode: ServiceNode;
@@ -46,12 +46,12 @@ export const APIWithSidebarLayout: React.FC<SidebarLayoutProps> = ({
   );
   const location = useLocation();
   const { pathname } = location;
-  const isRootPath = !pathname || pathname === '/';
-  const node = isRootPath ? serviceNode : serviceNode.children.find(child => child.uri === pathname);
+  // const isRootPath = !pathname || pathname === '/';
+  // const node = isRootPath ? serviceNode : serviceNode.children.find(child => child.uri === pathname);
 
-  const layoutOptions = React.useMemo(
-    () => ({ hideTryIt: hideTryIt, hideExport: hideExport || node?.type !== NodeType.HttpService }),
-    [hideTryIt, hideExport, node],
+  const layoutOptions = React.useCallback(
+    node => ({ hideTryIt: hideTryIt, hideExport: hideExport || node?.type !== NodeType.HttpService }),
+    [hideTryIt, hideExport],
   );
 
   const childrenComponent = React.useCallback(
@@ -62,7 +62,7 @@ export const APIWithSidebarLayout: React.FC<SidebarLayoutProps> = ({
           uri={pathname}
           node={node}
           nodeTitle={node.name}
-          layoutOptions={layoutOptions}
+          layoutOptions={layoutOptions(node)}
           location={location}
           exportProps={exportProps}
           tryItCredentialsPolicy={tryItCredentialsPolicy}
@@ -73,19 +73,19 @@ export const APIWithSidebarLayout: React.FC<SidebarLayoutProps> = ({
     [pathname, layoutOptions, location, exportProps, tryItCredentialsPolicy, tryItCorsProxy],
   );
 
-  if (!node) {
-    // Redirect to the first child if node doesn't exist
-    const firstSlug = findFirstNodeSlug(tree);
-    console.log(firstSlug);
+  // if (!node) {
+  //   // Redirect to the first child if node doesn't exist
+  //   const firstSlug = findFirstNodeSlug(tree);
+  //   console.log(firstSlug);
 
-    if (firstSlug) {
-      return <Navigate to={firstSlug} />;
-    }
-  }
+  //   if (firstSlug) {
+  //     return <Navigate to={firstSlug} />;
+  //   }
+  // }
 
-  if (hideInternal && node && isInternal(node)) {
-    return <Navigate to="/" />;
-  }
+  // if (hideInternal && node && isInternal(node)) {
+  //   return <Navigate to="/" />;
+  // }
 
   const handleTocClick = () => {
     if (container.current) {
