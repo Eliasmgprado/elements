@@ -286,7 +286,7 @@ const Node = React.memo<{
   return (
     <Box
       as={LinkComponent}
-      to={item.slug}
+      to={item.slug.substring(1)}
       display="block"
       textDecoration="no-underline"
       className="ElementsTableOfContentsItem"

@@ -21,6 +21,8 @@ export const ReactRouterMarkdownLink = ({
       </a>
     );
   }
+  console.log(href!.substring(1));
+  console.log('a');
   return (
     <Link to={href!.substring(1)} title={title}>
       {children}

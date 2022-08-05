@@ -1,6 +1,6 @@
 import '@eliasmgprado/elements-core/styles.css';
 
-import { API } from '@stoplight/elements';
+import { API } from '@eliasmgprado/elements';
 import { Box } from '@stoplight/mosaic';
 import React, { useContext } from 'react';
 
