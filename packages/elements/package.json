@@ -1,6 +1,6 @@
 {
   "name": "@eliasmgprado/elements",
-  "version": "7.6.9d",
+  "version": "7.6.3",
   "description": "UI components for composing beautiful developer documentation.",
   "keywords": [],
   "sideEffects": [
@@ -62,7 +62,7 @@
     ]
   },
   "dependencies": {
-    "@eliasmgprado/elements-core": "~7.6.7b",
+    "@eliasmgprado/elements-core": "^7.6.3",
     "@stoplight/http-spec": "^5.1.4",
     "@stoplight/json": "^3.18.1",
     "@stoplight/mosaic": "^1.24.2",
